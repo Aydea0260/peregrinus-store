@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PEREGRINUS — Frozen Portfolio for Foodservice | Wholesale Fruit Pulps, Cocktail Mixes & Avocado</title>
+<meta name="description" content="Peregrinus LLC — wholesale Latin foodservice portfolio: aseptic fruit purees, frozen fruit pulps, pulp pouches, cocktail mixes, guacamole and HPP avocado pulp. Minimum order 4 pallets. Ships from Miami, FL.">
+<style>
+  :root{
+    --green-950:#06231a; --green-900:#0b3d2e; --green-800:#0f5138; --green-700:#146344;
+    --lime:#8bc34a; --lime-soft:#dcecc8; --cream:#f7f5ee; --sand:#efe9db;
+    --ink:#1c2420; --muted:#5c6a62; --gold:#e8a33d;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:"Segoe UI",system-ui,-apple-system,Arial,sans-serif;color:var(--ink);background:var(--cream);line-height:1.55}
+  img{max-width:100%;display:block}
+  a{color:var(--green-800)}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+
+  /* Header */
+  header{position:sticky;top:0;z-index:50;background:var(--green-950);color:#fff;box-shadow:0 2px 10px rgba(0,0,0,.25)}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0;flex-wrap:wrap}
+  .brand{font-size:26px;font-weight:800;letter-spacing:4px;color:#fff;text-decoration:none}
+  .brand span{display:block;font-size:10px;letter-spacing:3px;font-weight:600;color:var(--lime)}
+  nav.links{display:flex;gap:20px;flex-wrap:wrap}
+  nav.links a{color:#e9f2ec;text-decoration:none;font-size:14px;font-weight:600}
+  nav.links a:hover{color:var(--lime)}
+  .btn{display:inline-block;background:var(--lime);color:var(--green-950);font-weight:800;
+       padding:11px 22px;border-radius:30px;text-decoration:none;font-size:15px;border:2px solid var(--lime)}
+  .btn:hover{background:transparent;color:var(--lime)}
+  .btn.ghost{background:transparent;color:#fff;border-color:#fff}
+  .btn.ghost:hover{border-color:var(--lime);color:var(--lime)}
+  .btn.dark{background:var(--green-900);border-color:var(--green-900);color:#fff}
+  .btn.dark:hover{background:var(--green-800)}
+
+  /* Hero */
+  .hero{background:linear-gradient(120deg,var(--green-950) 0%,var(--green-900) 55%,var(--green-800) 100%);color:#fff;padding:56px 0 64px}
+  .hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:36px;align-items:center}
+  .hero h1{font-size:44px;line-height:1.08;font-weight:900;text-transform:uppercase}
+  .hero h1 em{font-style:normal;color:var(--lime)}
+  .hero p.lead{font-size:19px;margin:16px 0 8px;color:#e6efe9}
+  .claims{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 26px}
+  .claims span{border:1px solid rgba(255,255,255,.45);border-radius:20px;padding:5px 14px;font-size:13px;font-weight:700;letter-spacing:.4px}
+  .hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
+  .hero img{border-radius:14px;box-shadow:0 14px 40px rgba(0,0,0,.4)}
+  .hero-note{margin-top:18px;font-size:14px;color:var(--lime-soft);font-weight:600}
+
+  /* Sections */
+  section{padding:64px 0}
+  h2{font-size:32px;font-weight:900;color:var(--green-900);text-transform:uppercase;letter-spacing:.5px}
+  .sub{color:var(--muted);max-width:760px;margin:8px 0 34px;font-size:16px}
+  .alt{background:#fff}
+
+  /* Product cards */
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:26px}
+  .card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 4px 18px rgba(6,35,26,.10);display:flex;flex-direction:column;border-top:5px solid var(--green-800)}
+  .alt .card{background:var(--cream)}
+  .card img{aspect-ratio:1284/593;object-fit:cover;width:100%}
+  .card .body{padding:22px 24px 26px;display:flex;flex-direction:column;gap:10px;flex:1}
+  .card h3{font-size:21px;color:var(--green-900);line-height:1.25}
+  .tag{align-self:flex-start;background:var(--lime-soft);color:var(--green-900);font-size:11px;font-weight:800;
+       letter-spacing:1px;text-transform:uppercase;padding:3px 10px;border-radius:12px}
+  .card p{font-size:14.5px;color:#39443e}
+  .card .lbl{font-weight:800;color:var(--green-900);font-size:13px;text-transform:uppercase;letter-spacing:.6px;margin-top:6px}
+  .specs{font-size:14px;background:var(--sand);border-radius:10px;padding:12px 14px}
+  .specs li{list-style:none;padding:2px 0}
+  .specs li::before{content:"▸ ";color:var(--green-700);font-weight:900}
+
+  /* Table */
+  table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 18px rgba(6,35,26,.08)}
+  th{background:var(--green-900);color:#fff;text-align:left;padding:13px 16px;font-size:14px;text-transform:uppercase;letter-spacing:.6px}
+  td{padding:12px 16px;border-top:1px solid #e5e1d4;font-size:14.5px;vertical-align:top}
+  tr:nth-child(even) td{background:#faf8f1}
+  .note{font-size:13px;color:var(--muted);margin-top:10px}
+
+  /* Steps */
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px}
+  .step{background:var(--green-900);color:#fff;border-radius:14px;padding:26px}
+  .step .num{font-size:34px;font-weight:900;color:var(--lime)}
+  .step h3{font-size:18px;margin:6px 0 8px}
+  .step p{font-size:14.5px;color:#dfe9e2}
+  .moq{background:var(--gold);color:#23180a;border-radius:14px;padding:22px 26px;margin-top:26px;
+       font-size:19px;font-weight:800;text-align:center}
+
+  /* Gallery */
+  .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px}
+  figure{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 14px rgba(6,35,26,.10)}
+  figure img{width:100%}
+  figcaption{padding:12px 16px;font-weight:700;color:var(--green-900);font-size:14.5px}
+
+  /* Footer */
+  footer{background:var(--green-950);color:#cfdccf;padding:44px 0 30px;font-size:14.5px}
+  footer .brand{font-size:22px}
+  footer a{color:var(--lime)}
+  .foot-grid{display:flex;justify-content:space-between;gap:26px;flex-wrap:wrap}
+  .fine{margin-top:26px;border-top:1px solid rgba(255,255,255,.15);padding-top:16px;font-size:13px;color:#9db3a4}
+
+  @media(max-width:820px){ .hero-grid{grid-template-columns:1fr} .hero h1{font-size:34px} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top">PEREGRINUS<span>FOOD IMPORT &amp; DISTRIBUTION</span></a>
+    <nav class="links">
+      <a href="#products">Products</a>
+      <a href="#formats">Formats &amp; Pallets</a>
+      <a href="#order">How to Order</a>
+      <a href="#sheets">Product Sheets</a>
+    </nav>
+    <a class="btn" href="mailto:operations@peregrinusglobal.com?subject=Quote%20request%20%E2%80%94%20Peregrinus%20portfolio">Request a Quote</a>
+  </div>
+</header>
+
+<div class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Frozen Portfolio<br>for <em>Foodservice</em></h1>
+      <p class="lead">Authentic Latin flavors for every menu — fruit pulps, cocktail mixes and avocado, ready for professional kitchens and beverage programs.</p>
+      <div class="claims">
+        <span>🍃 Real Fruit</span><span>✓ Authentic Flavors</span><span>👨‍🍳 Versatile Applications</span><span>❄️ Frozen Quality</span>
+      </div>
+      <div class="hero-ctas">
+        <a class="btn" href="mailto:operations@peregrinusglobal.com?subject=Quote%20request%20%E2%80%94%20Peregrinus%20portfolio">Request a Quote</a>
+        <a class="btn ghost" href="https://peregrinus-fruit-pulp-wholesale.jarvys.chatgpt.site/" target="_blank" rel="noopener">Visit our ChatGPT Store</a>
+      </div>
+      <p class="hero-note">Wholesale only · Minimum order: 4 pallets · Ships from Miami, FL · Quotes by email — no online checkout.</p>
+    </div>
+    <div>
+      <img src="assets/01-portfolio-cover.jpg" alt="Peregrinus frozen portfolio for foodservice — mango and guava fruit pulp jugs">
+    </div>
+  </div>
+</div>
+
+<section id="products">
+  <div class="wrap">
+    <h2>Product Lines</h2>
+    <p class="sub">Six lines built for foodservice operators, distributors and food &amp; beverage manufacturers. Every line is quoted per pallet — request a quote and we reply by email with pricing and samples.</p>
+    <div class="grid">
+
+      <article class="card">
+        <img src="assets/05-aseptic-puree.jpg" alt="Aseptic sweetened and unsweetened fruit puree">
+        <div class="body">
+          <span class="tag">Aseptic · Shelf-Stable</span>
+          <h3>Aseptic Fruit Puree — Sweetened &amp; Unsweetened</h3>
+          <p>Natural tropical fruit ingredients for food and beverage manufacturers. Ambient storage — no refrigeration until opened.</p>
+          <p class="lbl">Flavors</p>
+          <p>Mango, passion fruit, blackberry, strawberry, piña colada, lime, guava, soursop, pineapple, orange, Red Berries Mix, Tropical Yellow Fruits and Exotic Green Fruits.</p>
+          <p class="lbl">Uses</p>
+          <p>Juices &amp; smoothies, ice creams &amp; sorbets, bakery &amp; pastry fillings, sauces &amp; syrups, dairy &amp; yogurt, confectionery, jams &amp; jellies, baby food, brewing, ready-to-eat foods and nutritional drinks.</p>
+          <ul class="specs">
+            <li>Shelf life: 18 months · ambient temperature</li>
+            <li>Case pack: 4 × 6.61 lb · Net weight 26.46 lb</li>
+            <li>Case: 11.22″ × 9.84″ × 7.87″</li>
+            <li>Pallet: 80 cases (TI/HI 12/8)</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="assets/07-sweetened-pulps.jpg" alt="Sweetened frozen fruit pulps in jugs">
+        <div class="body">
+          <span class="tag">Frozen · Jugs</span>
+          <h3>Sweetened Fruit Pulps</h3>
+          <p>Authentic flavors, refreshing possibilities. Mix one part pulp with three parts water or milk, add ice and sugar to taste, blend and serve.</p>
+          <p class="lbl">Flavors</p>
+          <p>Passionfruit, soursop, guava, mango, watermelon, tangerine, blackberry, tamarind, pineapple, jamaica, horchata, melon, mango biche, cherry lemonade, piña colada and more.</p>
+          <p class="lbl">Uses</p>
+          <p>Aguas frescas, smoothies, fresh juices, desserts, ice creams, popsicles, sauces and exotic cocktails.</p>
+          <ul class="specs">
+            <li>Keep frozen · Shelf life: 18 months frozen</li>
+            <li>Boxes of 6 units (64 oz) / 6 units (32 oz)</li>
+            <li>Palletizing: 100 boxes per pallet</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="assets/06-pulp-pouches.jpg" alt="Frozen fruit pulp pouches">
+        <div class="body">
+          <span class="tag">Frozen · Portion Pouches</span>
+          <h3>Fruit Pulp Pouches</h3>
+          <p>Practical single-portion pouches for fast beverage prep — place 2 parts water or milk and one pouch in the blender, add ice and sugar to taste, blend and serve. With or without sugar.</p>
+          <p class="lbl">Flavors</p>
+          <p>Passionfruit, soursop, guava, mango, watermelon, tangerine, blackberry, tamarind, pineapple, jamaica, horchata, melon, mango biche, cherry lemonade, piña colada and more.</p>
+          <p class="lbl">Uses</p>
+          <p>Aguas frescas, smoothies, fresh juices, desserts, ice creams, popsicles, sauces and exotic cocktails.</p>
+          <ul class="specs">
+            <li>Keep frozen · Shelf life: 18 months frozen</li>
+            <li>Boxes with 10 bags × 10 pouches of 3.5 oz</li>
+            <li>Palletizing: 100 boxes per pallet</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="assets/02-cocktail-mixes.jpg" alt="Peregrinus fruit pulp cocktail mixes">
+        <div class="body">
+          <span class="tag">Frozen / Refrigerated · PET Bottles</span>
+          <h3>Cocktail Mixes</h3>
+          <p>Real fruit, amazing drinks. Alcoholic and non-alcoholic cocktail bases made from fresh fruits and premium-quality ingredients, designed for professional bartenders.</p>
+          <p class="lbl">Flavors</p>
+          <p>Tahiti lime, passion fruit, mango, strawberry, blackberry, tamarind, guava, piña colada, coconut, coconut lemonade and more.</p>
+          <p class="lbl">Uses</p>
+          <p>Cocktails, daiquiris, margaritas, mojitos, smoothies, frozen drinks and non-alcoholic beverages.</p>
+          <ul class="specs">
+            <li>1,000 ml (33.8 oz) recyclable PET bottles</li>
+            <li>Secondary packaging: 12 units per case</li>
+            <li>Shelf life: 1 year frozen · 90 days refrigerated</li>
+            <li>Palletizing: 90 boxes per pallet</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="assets/03-guacamole.jpg" alt="Peregrinus frozen guacamole">
+        <div class="body">
+          <span class="tag">Frozen · Foodservice &amp; Retail</span>
+          <h3>Guacamole</h3>
+          <p>Real ingredients, authentic flavor — made with authentic Hass avocados and a blend of fresh ingredients. Thaw in the refrigerator (40°F), stir well, and serve as is or customize.</p>
+          <p class="lbl">Ingredients</p>
+          <p>Hass avocado, onion, red bell pepper, lemon juice, jalapeño pepper, salt, antioxidant (ascorbic acid), stabilizer (xanthan gum), garlic powder.</p>
+          <p class="lbl">Uses</p>
+          <p>Dips, tacos, burgers, salads, sandwiches &amp; wraps, nachos, burrito bowls and foodservice menu items.</p>
+          <ul class="specs">
+            <li>Shelf life: 1 year frozen (365 days) · Storage 0°F (−18°C)</li>
+            <li>Country of origin: Colombia</li>
+            <li>Gluten Free · Cholesterol Free · Kosher</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="assets/04-avocado-pulp-hpp.jpg" alt="HPP chunky Hass avocado pulp">
+        <div class="body">
+          <span class="tag">Frozen · HPP · Custom Packaging</span>
+          <h3>Avocado Pulp HPP — Chunky Hass</h3>
+          <p>Natural, versatile, ready to use: 100% natural avocado pulp for guacamole, salsas, dips and more — saves time and labor. Custom packaging available. Thaw unopened bag 15–24 h in the refrigerator (40°F); once thawed, do not refreeze.</p>
+          <p class="lbl">Ingredients</p>
+          <p>Hass avocado, antioxidant (ascorbic acid), stabilizers (xanthan gum and sodium alginate).</p>
+          <p class="lbl">Ideal for</p>
+          <p>Guacamole, salsas, dips and dressings.</p>
+          <ul class="specs">
+            <li>Case pack: 10 × 2 lb bags · Net weight 20 lb</li>
+            <li>Case: 12.4″ l × 8.5″ w × 9.5″ h · UPC 705377713545</li>
+            <li>Shelf life: 1 year frozen · Storage 0°F (−18°C)</li>
+            <li>Country of origin: Colombia · Gluten Free · Cholesterol Free · Kosher</li>
+          </ul>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="formats" class="alt">
+  <div class="wrap">
+    <h2>Formats &amp; Pallets</h2>
+    <p class="sub">Standard configurations from the official product sheets. All orders are quoted and shipped by pallet.</p>
+    <table>
+      <tr><th>Product line</th><th>Packaging</th><th>Case</th><th>Per pallet</th><th>Storage / Shelf life</th></tr>
+      <tr><td><strong>Aseptic Fruit Puree</strong></td><td>Aseptic pouches, sweetened or unsweetened</td><td>4 × 6.61 lb · 26.46 lb net</td><td>80 cases (TI/HI 12/8)</td><td>Ambient · 18 months</td></tr>
+      <tr><td><strong>Sweetened Fruit Pulps</strong></td><td>Jugs</td><td>Boxes of 6 units (64 oz) / 6 units (32 oz)</td><td>100 boxes</td><td>Frozen · 18 months</td></tr>
+      <tr><td><strong>Fruit Pulp Pouches</strong></td><td>Portion pouches 3.5 oz</td><td>10 bags × 10 pouches</td><td>100 boxes</td><td>Frozen · 18 months</td></tr>
+      <tr><td><strong>Cocktail Mixes</strong></td><td>PET bottles 1,000 ml (33.8 oz)</td><td>12 units per case</td><td>90 boxes</td><td>Frozen 1 year · Refrigerated 90 days</td></tr>
+      <tr><td><strong>Guacamole</strong></td><td>Foodservice &amp; retail — see product sheet</td><td>—</td><td>—</td><td>Frozen 0°F (−18°C) · 1 year (365 days)</td></tr>
+      <tr><td><strong>Avocado Pulp HPP</strong></td><td>Bags — custom packaging available</td><td>10 × 2 lb bags · 20 lb net</td><td>—</td><td>Frozen 0°F (−18°C) · 1 year</td></tr>
+    </table>
+    <p class="note">“—” = not specified on the product sheet; confirmed when you request your quote.</p>
+  </div>
+</section>
+
+<section id="order">
+  <div class="wrap">
+    <h2>How to Order</h2>
+    <p class="sub">Three steps — no online prices and no checkout. We work business to business, by quote.</p>
+    <div class="steps">
+      <div class="step"><div class="num">1</div><h3>Pick your lines &amp; request a quote</h3><p>Choose your flavors and formats and email us at <a href="mailto:operations@peregrinusglobal.com?subject=Quote%20request%20%E2%80%94%20Peregrinus%20portfolio" style="color:var(--lime)">operations@peregrinusglobal.com</a>.</p></div>
+      <div class="step"><div class="num">2</div><h3>We reply by email</h3><p>You receive pricing and samples information for the lines you selected.</p></div>
+      <div class="step"><div class="num">3</div><h3>Wholesale dispatch</h3><p>Your order ships by pallet from Miami, FL, anywhere in the U.S.</p></div>
+    </div>
+    <div class="moq">📦 MINIMUM PURCHASE ORDER: 4 PALLETS</div>
+    <p style="text-align:center;margin-top:26px">
+      <a class="btn dark" href="mailto:operations@peregrinusglobal.com?subject=Quote%20request%20%E2%80%94%20Peregrinus%20portfolio">Request a Quote by Email</a>
+    </p>
+  </div>
+</section>
+
+<section id="sheets" class="alt">
+  <div class="wrap">
+    <h2>Official Product Sheets</h2>
+    <p class="sub">The complete SYSCO portfolio sheets — specifications, preparation and applications for every line.</p>
+    <div class="gallery">
+      <figure><img src="assets/01-portfolio-cover.jpg" alt="Frozen portfolio cover"><figcaption>Frozen Portfolio for Foodservice — cover</figcaption></figure>
+      <figure><img src="assets/05-aseptic-puree.jpg" alt="Aseptic puree sheet"><figcaption>Aseptic Sweetened &amp; Unsweetened Fruit Puree</figcaption></figure>
+      <figure><img src="assets/07-sweetened-pulps.jpg" alt="Sweetened pulps sheet"><figcaption>Sweetened Fruit Pulps</figcaption></figure>
+      <figure><img src="assets/06-pulp-pouches.jpg" alt="Pulp pouches sheet"><figcaption>Fruit Pulp Pouches</figcaption></figure>
+      <figure><img src="assets/02-cocktail-mixes.jpg" alt="Cocktail mixes sheet"><figcaption>Cocktail Mixes</figcaption></figure>
+      <figure><img src="assets/03-guacamole.jpg" alt="Guacamole sheet"><figcaption>Guacamole</figcaption></figure>
+      <figure><img src="assets/04-avocado-pulp-hpp.jpg" alt="Avocado pulp HPP sheet"><figcaption>Avocado Pulp HPP</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="#top">PEREGRINUS<span>FOOD IMPORT &amp; DISTRIBUTION</span></a>
+        <p style="margin-top:10px">Peregrinus LLC · Miami, FL<br>Wholesale Latin foodservice portfolio.</p>
+      </div>
+      <div>
+        <p><strong>Contact</strong><br>
+        Quotes: <a href="mailto:operations@peregrinusglobal.com?subject=Quote%20request%20%E2%80%94%20Peregrinus%20portfolio">operations@peregrinusglobal.com</a><br>
+        Also on: <a href="https://peregrinus-fruit-pulp-wholesale.jarvys.chatgpt.site/" target="_blank" rel="noopener">ChatGPT Store</a></p>
+      </div>
+      <div>
+        <p><strong>Terms</strong><br>Minimum order: 4 pallets<br>Quotes by email · Ships from Miami, FL</p>
+      </div>
+    </div>
+    <p class="fine">© Peregrinus LLC. Product specifications from the official Peregrinus portfolio sheets. Prices are provided only by formal quotation.</p>
+  </div>
+</footer>
+
+</body>
+</html>
